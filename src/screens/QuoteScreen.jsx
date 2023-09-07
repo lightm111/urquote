@@ -22,11 +22,12 @@ const QuoteScreen = () => {
   };
 
   return (
-    <Card maxW="40em" align="center">
+    <Card maxW="40rem" align="center" margin="1rem">
       <CardHeader alignSelf="start">
         <Heading
-          fontSize="10rem"
-          marginBottom="-7rem"
+          fontSize={["7rem", "10rem"]}
+          mt={["-0.8rem", "-1rem"]}
+          mb={["-6rem", "-9rem"]}
           color={bg.bgColor}
           transition="color 0.7s ease-in"
         >
@@ -34,11 +35,19 @@ const QuoteScreen = () => {
         </Heading>
       </CardHeader>
       <CardBody>
-        <Text fontSize="2xl">{quote.text}</Text>
-        <Text align="right">&#8212; {quote.author}</Text>
+        <Text
+          id="quote-text"
+          fontSize={["lg", "2xl"]}
+          padding={[undefined, "2rem"]}
+        >
+          {quote.text}
+        </Text>
+        <Text id="quote-author " align="right">
+          &#8212; {quote.author}
+        </Text>
       </CardBody>
       <Divider />
-      <CardFooter>
+      <CardFooter py="0.4rem">
         <Button variant="outline" onClick={changeHandler}>
           Another one!
         </Button>
